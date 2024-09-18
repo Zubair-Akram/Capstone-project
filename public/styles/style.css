@@ -1,0 +1,55 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.box {
+  display: flex;
+  flex-direction: column; /* Changed from row to column */
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+  width: 100%; /* Ensure input takes full width of the container */
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px; /* Margin to separate from button */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%; /* Make button full-width */
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.joke-box {
+  margin-top: 20px;
+  padding: 15px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #e9ecef;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 18px;
+}

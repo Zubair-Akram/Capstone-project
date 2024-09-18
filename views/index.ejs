@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lisper</title>
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      width: 600px;
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid #000;
+      background-color: #f9f9f9;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    .dropdown {
+      width: 48%; /* Adjust width to fit two dropdowns in one line */
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .buttons-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .buttons-row button {
+      width: 30%; /* Three buttons in one row */
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .buttons-row button:hover {
+      background-color: #0056b3;
+    }
+
+    .box h2 {
+      color: #333;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Choose A Button for the Joke You Need</h1>
+
+    <form action="/get-joke" method="POST">
+      <!-- Dropdowns in one row -->
+      <div class="form-row">
+        <div>
+          <label for="language" name="language">Select Language:</label>
+          <select class="dropdown" name="language" id="language">
+            <option value="en" selected>English</option> <!-- Corrected values for API -->
+            <option value="es">Spanish</option>
+            <option value="de">German</option>
+            <option value="fr">French</option>
+          </select>
+        </div>
+        <div>
+          <label for="format" name="format">Select Response Format:</label>
+          <select class="dropdown" name="format" id="format">
+            <option value="json" selected>JSON</option>
+            <option value="xml">XML</option>
+            <option value="plaintext">Plain Text</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Buttons in two rows, three per row -->
+      <div class="buttons-row" name="category">
+        <button type="submit" name="joke" value="Any">Any Joke</button>
+        <button type="submit" name="joke" value="Programming">Programming Joke</button>
+        <button type="submit" name="joke" value="Miscellaneous">Miscellaneous Joke</button>
+        <button type="submit" name="joke" value="Pun">Pun Joke</button>
+        <button type="submit" name="joke" value="Dark">Dark Joke</button>
+        <button type="submit" name="joke" value="Spooky">Spooky Joke</button>
+      </div>
+
+      <!-- Content area for joke display -->
+      <h2><%= content ? content : '' %></h2>
+    </form>
+  </div>
+</body>
+</html>
